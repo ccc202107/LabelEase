@@ -1,4 +1,10 @@
-# RCLTool
+# TraceEase
+
+
+We provide a trace anomaly detection dataset in 
+```shell
+./backend/TraceEase/data/data1.zip
+```
 
 
 
