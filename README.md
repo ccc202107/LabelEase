@@ -20,7 +20,7 @@ python run.py
 
 ## backend
 
-```
+```shell
 cd .\backend\
 python manage.py makemigrations
 python manage.py migrate
@@ -31,7 +31,7 @@ python manage.py runserver
 
 ## frontend
 
-```
+```shell
 cd .\frontend\
 npm install
 npm run dev
