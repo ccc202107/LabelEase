@@ -124,9 +124,6 @@ def get_fscore_and_services(period,out_path,data_file_path):
     return [service_statistic_dict,call_path_set,anomaly_period_service_2_duration,service_Oef_dict]
 
 def main(period,out_path,data_file_path):
-    with open(os.path.join(out_path,"service_ne.pkl"),'br') as f:
-        res = pickle.load(f)
-    return res
     service_statistic_dict,call_path_set,anomaly_period_service_2_duration,service_Oef_dict = get_fscore_and_services(period,out_path,data_file_path)
     nodes = []
     edges = []
@@ -165,8 +162,8 @@ def main(period,out_path,data_file_path):
         edge['to'] = _to
         edges.append(edge)
 
-    with open(os.path.join(out_path,"service_ne.pkl"),'bw') as f:
-        pickle.dump([nodes,edges],f)
+    # with open(os.path.join(out_path,"service_ne.pkl"),'bw') as f:
+    #     pickle.dump([nodes,edges],f)
     return nodes,edges
 
 

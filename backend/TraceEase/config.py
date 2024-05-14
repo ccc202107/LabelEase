@@ -16,8 +16,8 @@ parser.add_argument('--out_dir', type=str, default='0430')
 parser.add_argument('--num_layers', type=int, default=3)
 parser.add_argument('--data_type', type=str,default="data1")
 parser.add_argument('--p', type=int,default=35)
-# parser.add_argument('--SAMPLE_NUM', type=int,default=60000)
-parser.add_argument('--SAMPLE_NUM', type=int,default=60)
+parser.add_argument('--SAMPLE_NUM', type=int,default=60000)
+
 args = parser.parse_args()
 
 seed=args.seed
