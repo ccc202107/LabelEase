@@ -8,14 +8,14 @@ from django.http import JsonResponse, HttpResponse
 import json
 import pickle
 from datetime import datetime
-from TraceEase.utils import clean
-import TraceEase.label 
-import TraceEase.anomaly_period 
-import TraceEase.spectrum 
-import TraceEase.export_groundtruth 
+from LabelEase.utils import clean
+import LabelEase.label 
+import LabelEase.anomaly_period 
+import LabelEase.spectrum 
+import LabelEase.export_groundtruth 
 
-data_file_path = "./TraceEase/data/data1/"
-out_path = "./TraceEase/Output"
+data_file_path = "./LabelEase/data/data1/"
+out_path = "./LabelEase/Output"
 
 
 @csrf_exempt
@@ -100,13 +100,13 @@ class LabelingView(View):
             chosed_trace_labels.append(traceId2label[trace_id])
         with open(os.path.join(out_path,"chosed_trace_labels.json"),'w') as f:
             json.dump(chosed_trace_labels,f)
-        TraceEase.label.main(out_path,data_file_path)
+        LabelEase.label.main(out_path,data_file_path)
         response = HttpResponse(open(os.path.join(data_file_path,"labels.csv"), 'rb').read())
         response['Content-Type'] = 'application/octet-stream'
         response['Content-Disposition'] = 'attachment; filename="exported_trace_lables.csv"'
         return response
     def anomaly_period(request):
-        TraceEase.anomaly_period.main(out_path,data_file_path)
+        LabelEase.anomaly_period.main(out_path,data_file_path)
         return JsonResponse("ok", safe=False, status=200)
     def get_period(request):
         with open(os.path.join(out_path,"anomaly_period.json")) as f:
@@ -120,7 +120,7 @@ class LabelingView(View):
         index = int(request.GET.get('index'))
         with open(os.path.join(out_path,"anomaly_period.json")) as f:
             anomaly_period_list = json.load(f)
-        nodes,edges = TraceEase.spectrum.main(anomaly_period_list[index],out_path,data_file_path)
+        nodes,edges = LabelEase.spectrum.main(anomaly_period_list[index],out_path,data_file_path)
         res={"nodes":nodes,"edges":edges}
         return JsonResponse(res, safe=False, status=200)
     def export_groundtruth(request):
@@ -132,7 +132,7 @@ class LabelingView(View):
             rcl_label['failure_type'].append(label[1])
         with open(os.path.join(out_path,"rcl_label.json"),'w') as f:
             json.dump(rcl_label,f)
-        TraceEase.export_groundtruth.main(out_path,data_file_path)
+        LabelEase.export_groundtruth.main(out_path,data_file_path)
 
         response = HttpResponse(open(os.path.join(data_file_path,"groundtruth.json"), 'rb').read())
         response['Content-Type'] = 'application/octet-stream'

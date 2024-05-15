@@ -1,7 +1,7 @@
 <template>
   <div>
     <div style="display: flex;align-items: center;">
-      <div style="font-size: 18px;font-weight: bold;width: 21%;">TraceEase</div>
+      <div style="font-size: 18px;font-weight: bold;width: 21%;">LabelEase</div>
       <div id="NavMenu"
            style="width: 100%;display: flex;display: flex;justify-content: center">
         <el-menu :default-active="toIndex"

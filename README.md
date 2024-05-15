@@ -1,9 +1,9 @@
-# TraceEase
+# LabelEase
 
 
 We provide a trace anomaly detection dataset in 
 ```shell
-./backend/TraceEase/data/data1.zip
+./backend/LabelEase/data/data1.zip
 ```
 
 
@@ -11,7 +11,7 @@ We provide a trace anomaly detection dataset in
 ## start quickly
 
 ```shell
-cd .\backend\TraceEase\
+cd .\backend\LabelEase\
 pip install -r .\requirements.txt
 python run.py
 ```
