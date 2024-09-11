@@ -48,23 +48,21 @@ You can get the docker image and model weights from 【ISSRE2024_208】 https://
 
 ### start quickly
 
-> Please make sure that MySQL has been installed on the host or server and the MySQL service has been successfully started. 
+> Ensure that MySQL is installed on the host or server and that the MySQL service is running successfully. Additionally, update the MySQL configuration details in the `./backend/backend/settings.py` file.
 >
-> In addition, please update your mysql configuration information in the **.\backend\backend\settings.py** file.
->
-> If you are using the docker image we provide, you can set HOST to host.docker.internal to connect to the host's mysql service. For example, 
+> If you are using the provided Docker image, you can set the `HOST` parameter to `host.docker.internal` to connect to the MySQL service running on the host machine. For instance:
 >
 > ```
 > DATABASES = {
->     'default': {
->         'ENGINE': 'django.db.backends.mysql',
->         'NAME': 'rcltool',
->         'USER': 'xxx',
->         'PASSWORD': 'xxx',
->         # 'HOST': 'localhost',
->         'HOST': 'host.docker.internal',
->         'PORT': '3306',
->     }
+>  'default': {
+>      'ENGINE': 'django.db.backends.mysql',
+>      'NAME': 'rcltool',
+>      'USER': 'xxx',
+>      'PASSWORD': 'xxx',
+>      # 'HOST': 'localhost',
+>      'HOST': 'host.docker.internal',
+>      'PORT': '3306',
+>  }
 > }
 > 
 > ```
