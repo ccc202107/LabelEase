@@ -42,7 +42,7 @@ docker run -it -p 8000:8000 -v <项目绝对路径>:/app  镜像名  /bin/bash
 
 In addition, the artifact requires automatic downloading of model weights. However, under poor network conditions, the download may be slow or fail. To address this, we have provided the relevant model weights folder, **bert-base-uncased**, which should be placed in the following directory: `./backend/LabelEase`.
 
-You can get the docker image and model weights from 【ISSRE2024_208】 https://fc0a3d4407.znas.cn/AppH5/share/?nid=LIYDEMRQGA2DERCFJVLU2&code=dtIE3CeEfyD0m1YMFjm1kJjpLVGVSqm2Vn2pE6146rm1qm3vdDs3jo9e6XO0wIKlMigUu&mode=file&display=list
+The docker image and model weights can be accessed via the following link: https://fc0a3d4407.znas.cn/AppH5/share/?nid=LIYDEMRQGA2DERCFJVLU2&code=dtIE3CeEfyD0m1YMFjm1kJjpLVGVSqm2Vn2pE6146rm1qm3vdDs3jo9e6XO0wIKlMigUu&mode=file&display=list
 
 ## Getting Started
 
