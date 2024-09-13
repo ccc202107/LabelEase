@@ -37,7 +37,7 @@ pip install -r .\requirements.txt
 We also provide a Docker image for the backend to streamline the installation process. To utilize it, simply mount the project directory to the working environment and map the necessary ports. You can then build and run the Docker container using the provided image. For instance:
 
 ```
-docker run -it -p 8000:8000 -v <项目绝对路径>:/app  镜像名  /bin/bash
+docker run -it -p 8000:8000 -v <project absolute path>:/app  <image>  /bin/bash
 ```
 
 In addition, the artifact requires automatic downloading of model weights. However, under poor network conditions, the download may be slow or fail. To address this, we have provided the relevant model weights folder, **bert-base-uncased**, which should be placed in the following directory: `./backend/LabelEase`.
